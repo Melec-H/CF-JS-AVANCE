@@ -1,5 +1,5 @@
 import axios from 'axios'
-import API_TOKEN from './TMDB_key'
+import {API_TOKEN} from './TMDB_key'
 
 
 // API/TMDBApi.js
