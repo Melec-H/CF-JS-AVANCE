@@ -1,21 +1,13 @@
 import React, {Component} from "react";
 import "../Styles/DetailsMovie.css"
 import Box from '@material-ui/core/Box';
-
-import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import makeStyles from "@material-ui/core/styles/makeStyles";
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        padding: theme.spacing(3, 2),
-    },
-}));
 
 
-export default class DetailsMovie extends  Component {
+
+class MovieDetailComponent extends  Component {
 
     render() {
         return(
