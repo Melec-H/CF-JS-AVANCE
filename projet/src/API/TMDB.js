@@ -11,7 +11,15 @@ export async function getFilmsFromApiWithSearchedText(text, page) {
         },
     })
 
-    return results
+    return results.map(tmdbMovie => {
+        return {
+            id: tmdbMovie.id,
+            title: tmdbMovie.title,
+            synopsis: tmdbMovie.overview,
+            poster: tmdbMovie.poster_path,
+            release: tmdbMovie.release_date
+        }
+    })
 }
 
 
