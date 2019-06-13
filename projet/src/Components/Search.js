@@ -15,17 +15,26 @@ const theme = createMuiTheme({
 class Search extends React.Component {
 
     state = {
-        name : 'star wars'
+        name : ''
     }
 
 
+    getSearchedText (event) {
+        this.setState(
+            {name : event.target.value}
+        )
+        console.log(this.state.name)
 
-    loadFilms() {
-        getFilmsFromApiWithSearchedText(this.state.name)
+    }
+
+
+    async loadFilms() {
+        if(this.state.name) {
+            await getFilmsFromApiWithSearchedText(this.state.name, 0)
+        }
     }
 
     render () {
-        console.log(this.loadFilms())
         return (
             <div>
                 <ThemeProvider theme={theme}>
@@ -33,10 +42,12 @@ class Search extends React.Component {
                         label="Rechercher"
                         variant="outlined"
                         id="mui-theme-provider-outlined-input"
-                        onChange={()=>{console.log('coucou')}}
+                        onChange={(x)=>{this.getSearchedText(x)}}
                     />
+                    {this.loadFilms()}
                 </ThemeProvider>
             </div>
+
         )
     }
 }
