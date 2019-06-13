@@ -24,3 +24,5 @@ yarn-error.log*
 
 .ideas/*
 .idea/*
+
+package-lock.json
