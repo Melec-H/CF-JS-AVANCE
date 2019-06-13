@@ -24,7 +24,7 @@ export default function CardMovie(props) {
     const { id, title, releaseYear, synopsis, poster } = props
 
     return (
-        <Card id = {id} className={classes.card}>
+        <Card id = {id} className={classes.card} onClick={props.onClick}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
