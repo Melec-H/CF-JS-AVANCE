@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 import { blue } from '@material-ui/core/colors';
@@ -11,6 +11,7 @@ const theme = createMuiTheme({
         primary: blue,
     },
 });
+
 
 class Search extends React.Component {
     static defaultProps = {
@@ -25,13 +26,14 @@ class Search extends React.Component {
     }
 
     render () {
+
         return (
             <div>
                 <ThemeProvider theme={theme}>
                     <TextField
+                        style={{width: '50%', margin: 20}}
                         label="Rechercher"
-                        variant="outlined"
-                        id="mui-theme-provider-outlined-input"
+                        id="mui-theme-provider-standard-input"
                         onChange={(e)=>{this.getSearchedText(e)}}
                     />
 
@@ -41,6 +43,9 @@ class Search extends React.Component {
         )
     }
 }
+
+
+
 
 export default Search
 

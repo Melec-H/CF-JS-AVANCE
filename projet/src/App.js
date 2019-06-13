@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react'
 import Search from './Components/Search'
+import Drawer from './Components/Drawer'
 import './App.css';
+import Header from "./Components/Header";
 
-function App() {
-    function logComplete(list) {
+class App extends Component{
+
+    logComplete(list) {
         console.log('=====> App', list)
     }
 
-    return (
-        <div className="App">
-            <Search onComplete={logComplete}/>
-        </div>
-    );
+    render () {
+        return (
+            <div className="App">
+                <Drawer/>
+                <Header/>
+                <Search onComplete={this.logComplete()}/>
+            </div>
+        )
+    }
+
 }
 
 export default App;
