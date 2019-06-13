@@ -26,3 +26,5 @@ yarn-error.log*
 .idea/*
 
 package-lock.json
+
+src/API/TMDB_key.js
