@@ -2,7 +2,7 @@ import axios from 'axios'
 import {API_TOKEN} from "./TMDB_keys";
 
 export async function getFilmsFromApiWithSearchedText(text, page) {
-    const {data} = await axios.get('https://api.themoviedb.org/3/search/movie', {
+    const {data: {results}} = await axios.get('https://api.themoviedb.org/3/search/movie', {
         params: {
             api_key: API_TOKEN,
             language: 'fr-FR',
@@ -11,7 +11,7 @@ export async function getFilmsFromApiWithSearchedText(text, page) {
         },
     })
 
-    return data
+    return results
 }
 
 

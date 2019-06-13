@@ -3,11 +3,15 @@ import Search from './Components/Search'
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <Search />
-    </div>
-  );
+    function logComplete(list) {
+        console.log('=====> App', list)
+    }
+
+    return (
+        <div className="App">
+            <Search onComplete={logComplete}/>
+        </div>
+    );
 }
 
 export default App;
