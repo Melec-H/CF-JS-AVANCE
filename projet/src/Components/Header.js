@@ -10,7 +10,7 @@ export default class Header extends Component {
 
     render() {
         return(
-            <img src={this.props.image} style={{width: '100%'}}/>
+            <img src={this.props.image} alt="header" style={{width: '100%'}}/>
         )
     }
 }

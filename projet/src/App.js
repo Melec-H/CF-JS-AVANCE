@@ -1,14 +1,11 @@
 import React from 'react';
 import {MovieDetailView} from "./Views/MovieDetailView";
 import {MoviesView} from "./Views/MoviesView";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
 
 function App() {
 
-  function logItem(item) {
-    console.log("===>", item)
-  }
   return (
       <div>
         <Router>

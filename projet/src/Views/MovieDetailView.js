@@ -4,7 +4,9 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import {getBackdropFromApi, getFilmDetailFromApi, getImageFromApi} from "../API/TMDB";
 import Header from "../Components/Header";
-import Drawer from '../Components/Drawer'
+import Drawer from '../Components/Drawer';
+
+import "../Helpers/App.css"
 
 
 export class MovieDetailView extends Component {
@@ -31,9 +33,7 @@ export class MovieDetailView extends Component {
     }
 
     render() {
-        console.log(this.state);
         const { title, genres, overview, poster_path, production_companies, release_date, backdrop_path } = this.state;
-        console.log(genres);
         return (
             <div className="App">
                 <Drawer/>
@@ -46,9 +46,9 @@ export class MovieDetailView extends Component {
                         </Grid>
                         <Grid container direction="row">
                             <Grid item xs>
-                                <img src={getImageFromApi(poster_path)}/>
+                                <img src={getImageFromApi(poster_path)} alt="poster"/>
                             </Grid>
-                            <Grid container xs={8}>
+                            <Grid container>
                                 <Grid container spacing={3} direction="column">
                                     <Grid>
                                         <Grid container spacing={3} direction="row">
