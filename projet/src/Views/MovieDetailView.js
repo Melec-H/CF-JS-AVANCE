@@ -2,17 +2,17 @@ import React, {Component} from "react";
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import {getFilmDetailFromApi} from "../API/TMDB";
+import {getFilmDetailFromApi, getImageFromApi} from "../API/TMDB";
 
 
 export class MovieDetailView extends Component {
 
     state = {
         title: null,
-        genres: null,
+        genres: [],
         overview: null,
         poster_path: null,
-        production_companies: null,
+        production_companies: [],
         release_date: null
     }
 
@@ -31,6 +31,7 @@ export class MovieDetailView extends Component {
     render() {
         console.log(this.state);
         const { title, genres, overview, poster_path, production_companies, release_date } = this.state;
+        console.log(genres);
         return (
             <Container fixed>
                 <Grid container spacing={3} direction="column">
@@ -39,9 +40,9 @@ export class MovieDetailView extends Component {
                     </Grid>
                     <Grid container direction="row">
                         <Grid item xs>
-                            <img src="https://placekitten.com/250/350"/>
+                            <img src={getImageFromApi(poster_path)}/>
                         </Grid>
-                        <Grid container xs={9}>
+                        <Grid container xs={8}>
                             <Grid container spacing={3} direction="column">
                                 <Grid>
                                     <Grid container spacing={3} direction="row">
@@ -51,7 +52,11 @@ export class MovieDetailView extends Component {
                                             <Paper style={{
                                                 padding: 5
                                             }}>
-                                                Horreur/Frisson/Thriller
+
+                                                {genres.map((genre, key) => {
+                                                    return `${genre.name} `
+                                                })
+                                                }
                                             </Paper>
                                         </Grid>
                                         <Grid style={{
@@ -60,7 +65,7 @@ export class MovieDetailView extends Component {
                                             <Paper style={{
                                                 padding: 5
                                             }}>
-                                                Release Date: 2010
+                                                Release Date: {new Date(release_date).toLocaleDateString()}
                                             </Paper>
                                         </Grid>
                                         <Grid style={{
@@ -69,7 +74,10 @@ export class MovieDetailView extends Component {
                                             <Paper style={{
                                                 padding: 5
                                             }}>
-                                                Lion's Gate / HBO
+                                                {production_companies.map((production, key) => {
+                                                    return `${production.name}, `
+                                                })
+                                                }
                                             </Paper>
                                         </Grid>
                                         <Grid>
