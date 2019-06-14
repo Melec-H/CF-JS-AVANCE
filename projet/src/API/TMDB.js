@@ -17,7 +17,7 @@ export async function getFilmsFromApiWithSearchedText(text, page) {
             title: tmdbMovie.title,
             synopsis: tmdbMovie.overview,
             poster: tmdbMovie.poster_path,
-            release: tmdbMovie.release_date
+            releaseYear: tmdbMovie.release_date
         }
     })
 }

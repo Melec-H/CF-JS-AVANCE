@@ -21,10 +21,10 @@ const useStyles = makeStyles({
 
 export default function CardMovie(props) {
     const classes = useStyles();
-    const { id, title, releaseYear, synopsis, poster } = props
+    const {id, title, releaseYear, synopsis, poster } = props
 
     return (
-        <Card id = {id} className={classes.card} onClick={props.onClick}>
+        <Card className={classes.card} onClick={props.onClick}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
@@ -36,22 +36,16 @@ export default function CardMovie(props) {
                     affichage de l'id = {id}
                     <br></br>
                         {title}
+
+                        {releaseYear}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {releaseYear}
+                        
                         <br></br>
                         {synopsis}
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            {/* <CardActions>
-              <Button size="small" color="primary">
-                Share
-              </Button>
-              <Button size="small" color="primary">
-                Learn More
-              </Button>
-            </CardActions> */}
         </Card>
     );
 }

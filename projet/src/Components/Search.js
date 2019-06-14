@@ -20,7 +20,7 @@ class Search extends React.Component {
         }
     }
 
-    async getSearchedText (event) {
+    getSearchedText = async (event) => {
         const keyword =  event.target.value
         this.props.onComplete(await getFilmsFromApiWithSearchedText(keyword))
     }
