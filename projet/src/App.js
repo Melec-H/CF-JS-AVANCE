@@ -15,6 +15,11 @@ function App() {
                 component={MoviesView}
             />
             <Route
+                path="/:nav"
+                exact
+                component={MoviesView}
+            />
+            <Route
                 path="/movies/:movieId"
                 exact
                 component={MovieDetailView}

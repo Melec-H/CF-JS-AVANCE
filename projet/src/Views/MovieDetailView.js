@@ -46,7 +46,7 @@ export class MovieDetailView extends Component {
                         </Grid>
                         <Grid container direction="row">
                             <Grid item xs>
-                                <img src={getImageFromApi(poster_path)} alt="poster"/>
+                                <img src={getImageFromApi(poster_path)} alt="poster" style={{marginBottom: 40}}/>
                             </Grid>
                             <Grid container>
                                 <Grid container spacing={3} direction="column">

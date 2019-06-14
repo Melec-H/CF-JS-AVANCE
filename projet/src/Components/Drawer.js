@@ -137,10 +137,12 @@ export default function PersistentDrawerLeft() {
                 <Divider />
                 <List component="nav" aria-label="Secondary mailbox folders">
                     <ListItem button style={{textAlign: 'center'}}>
+                        <ListItemLink  href="/">
+                            <ListItemText primary="ACCUEIL"/>
+                        </ListItemLink>
 
-                        <ListItemText primary="ACCUEIL" />
                     </ListItem>
-                    <Divider />
+            {/*        <Divider />
                     <ListItemLink href="#simple-list">
                         <PlayCircleOutline  style={{margin: 10}}/>
                         <ListItemText primary="En ce moment" />
@@ -156,7 +158,7 @@ export default function PersistentDrawerLeft() {
                     <ListItemLink href="#simple-list">
                         <QueryBuilder  style={{margin: 10}}/>
                         <ListItemText primary="Les films à venir" />
-                    </ListItemLink>
+                    </ListItemLink>*/}
 
                 </List>
                 <Divider />

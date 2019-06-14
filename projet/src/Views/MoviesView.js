@@ -17,9 +17,7 @@ export class MoviesView extends Component{
 
     }
 
-    logItem(item) {
-        return this.state;
-    }
+
 
     render () {
 

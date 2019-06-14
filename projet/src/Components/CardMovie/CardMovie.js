@@ -30,16 +30,10 @@ export default function CardMovie(props) {
                     title={title}
                 />
                 <CardContent>                    
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2" style={{height: '102.39px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         {title}
+                    </Typography>
 
-                        {releaseYear}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        
-                        <br></br>
-                        {synopsis}
-                    </Typography>
                 </CardContent>
             </CardActionArea>
         </Card>
