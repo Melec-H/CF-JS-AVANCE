@@ -2,10 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -21,7 +19,7 @@ const useStyles = makeStyles({
 
 export default function CardMovie(props) {
     const classes = useStyles();
-    const {id, title, releaseYear, synopsis, poster } = props
+    const {title, releaseYear, synopsis, poster } = props
 
     return (
         <Card className={classes.card} onClick={props.onClick}>
@@ -33,8 +31,6 @@ export default function CardMovie(props) {
                 />
                 <CardContent>                    
                     <Typography gutterBottom variant="h5" component="h2">
-                    affichage de l'id = {id}
-                    <br></br>
                         {title}
 
                         {releaseYear}

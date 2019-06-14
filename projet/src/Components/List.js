@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CardMovie from './CardMovie/CardMovie'
-import { makeStyles } from '@material-ui/core/styles';
 import { getImageFromApi } from '../API/TMDB';
+import {Link} from "react-router-dom";
 console.log(CardMovie)
 
 export default class List extends Component {
@@ -13,10 +13,8 @@ export default class List extends Component {
 
     cardCreation() {
         const {items} = this.props
-
-        console.log(items)
-
         return (items.map( item => (
+            <Link to={`/movies/${item.id}`} >
             <CardMovie 
                 id={item.id}
                 className='card'
@@ -24,7 +22,8 @@ export default class List extends Component {
                 releaseYear={item.releaseYear}
                 synopsis={item.synopsis}
                 poster= {getImageFromApi(item.poster)}
-                onClick={() => {console.log('item', item);this.props.onClickCard(item)}}></CardMovie>
+                ></CardMovie>
+            </Link>
         )))
 
     }

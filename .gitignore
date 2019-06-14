@@ -2,3 +2,7 @@
 exercices/node_modules/
 
 projet/src/API/TMDB_keys\.js
+
+projet/\.idea/
+
+projet/yarn\.lock
