@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.ideas/*
+.idea/*
+
+package-lock.json
+
+src/API/TMDB_key.js
