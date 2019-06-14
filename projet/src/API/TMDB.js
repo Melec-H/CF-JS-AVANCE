@@ -1,19 +1,32 @@
 import axios from 'axios'
-import {API_TOKEN} from './TMDB_key'
+import {API_TOKEN} from "./TMDB_keys";
 
+export async function getFilmsFromApiWithSearchedText(text, page) {
+    const {data: {results}} = await axios.get('https://api.themoviedb.org/3/search/movie', {
+        params: {
+            api_key: API_TOKEN,
+            language: 'fr-FR',
+            query: text,
+            // page: page
+        },
+    })
 
-// API/TMDBApi.js
-
-export async function getFilmsFromApiWithSearchedText (text, page) {
-    const {data} = await axios.get( 'https://api.themoviedb.org/3/search/movie?api_key=' + API_TOKEN + '&language=fr&query=' + text + "&page=" + page)
-    return data
+    return results.map(tmdbMovie => {
+        return {
+            id: tmdbMovie.id,
+            title: tmdbMovie.title,
+            synopsis: tmdbMovie.overview,
+            poster: tmdbMovie.poster_path,
+            release: tmdbMovie.release_date
+        }
+    })
 }
 
-export function getImageFromApi (name) {
-    return `https://image.tmdb.org/t/p/w300${name}`
+
+export function getImageFromApi(name) {
+    return 'https://image.tmdb.org/t/p/w300' + name
 }
 
-// API/TMDBApi.js
 
 // Récupération du détail d'un film
 export async function getFilmDetailFromApi (id) {
