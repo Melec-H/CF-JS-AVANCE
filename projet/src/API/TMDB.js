@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {API_TOKEN} from "./TMDB_keys";
+import {API_TOKEN} from "./TMDB_key";
 
 export async function getFilmsFromApiWithSearchedText(text, page) {
     const {data: {results}} = await axios.get('https://api.themoviedb.org/3/search/movie', {
@@ -25,6 +25,10 @@ export async function getFilmsFromApiWithSearchedText(text, page) {
 
 export function getImageFromApi(name) {
     return 'https://image.tmdb.org/t/p/w300' + name
+}
+
+export function getBackdropFromApi(name) {
+    return `https://image.tmdb.org/t/p/original${name}`
 }
 
 
